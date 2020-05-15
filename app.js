@@ -1,4 +1,4 @@
-// console.log('Welcome to my project.');
+
 showCreatedNotes();
 let addNoteBtn = window.document.getElementById('addNoteBtn').addEventListener('click', function (e) {
     let textForNote = window.document.getElementById('textAreaForNote');
@@ -61,20 +61,23 @@ function deleteNote(index)
 let searchNote=window.document.getElementById('searchNote');
 searchNote.addEventListener('input',function(){
     let inputVal = searchNote.value.toLowerCase();
-    // console.log('Input event fired!', inputVal);
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function(element){        
         let cardTxt = element.getElementsByTagName("p")[0].innerText;
-        // console.log(element.getElementsByTagName('p'))
-        if(cardTxt.toLowerCase().includes(inputVal)){
+        let titleText=element.getElementsByTagName("h5")[0].innerText;
+        // console.log(titleText);
+        // console.log(element.getElementsByTagName('p'))        
+        if(cardTxt.toLowerCase().includes(inputVal) || titleText.toLowerCase().includes(inputVal)){
             element.style.display = "block";
         }
         else{
-            element.style.display = "none";
+            element.style.display = "none";    
         }
+
+        
         // console.log(cardTxt);
-    })
-})
+    });
+});
 
 let searchNoteButton=window.document.getElementById('searchNoteButton');
 searchNoteButton.addEventListener('click',function(){
@@ -83,14 +86,16 @@ searchNoteButton.addEventListener('click',function(){
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function(element){        
         let cardTxt = element.getElementsByTagName("p")[0].innerText;
+        let titleText=element.getElementsByTagName("h5")[0].innerText;
+        // console.log(titleText);
         // console.log(element.getElementsByTagName('p'))
-        if(cardTxt.toLowerCase().includes(inputVal)){
+        if(cardTxt.toLowerCase().includes(inputVal) || titleText.toLowerCase().includes(inputVal)){
             element.style.display = "block";
         }
         else{
             element.style.display = "none";
         }
         // console.log(cardTxt);
-    })
+    });
     searchNote.value='';
-})
+});
