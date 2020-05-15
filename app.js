@@ -1,4 +1,3 @@
-
 showCreatedNotes();
 let addNoteBtn = window.document.getElementById('addNoteBtn').addEventListener('click', function (e) {
     let textForNote = window.document.getElementById('textAreaForNote');
@@ -21,8 +20,7 @@ let addNoteBtn = window.document.getElementById('addNoteBtn').addEventListener('
         arrayOfNotes.push(noteObj);
         textForNote.value = '';
         textForTitle.value='';
-        localStorage.setItem('createdNotes', JSON.stringify(arrayOfNotes));
-        // console.log(arrayOfNotes);
+        localStorage.setItem('createdNotes', JSON.stringify(arrayOfNotes));        
     }    
     showCreatedNotes();
 })
@@ -53,49 +51,49 @@ function deleteNote(index)
 {
     let createdNotes=JSON.parse(localStorage.getItem('createdNotes'));
     createdNotes.splice(index,1);
-    localStorage.setItem('createdNotes',JSON.stringify(createdNotes));
-    // console.log(localStorage.getItem('createdNotes'));
+    localStorage.setItem('createdNotes',JSON.stringify(createdNotes));    
     showCreatedNotes();
 }
 
 let searchNote=window.document.getElementById('searchNote');
-searchNote.addEventListener('input',function(){
+searchNote.addEventListener('input',function(event){
     let inputVal = searchNote.value.toLowerCase();
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function(element){        
         let cardTxt = element.getElementsByTagName("p")[0].innerText;
-        let titleText=element.getElementsByTagName("h5")[0].innerText;
-        // console.log(titleText);
-        // console.log(element.getElementsByTagName('p'))        
+        let titleText=element.getElementsByTagName("h5")[0].innerText;                
         if(cardTxt.toLowerCase().includes(inputVal) || titleText.toLowerCase().includes(inputVal)){
             element.style.display = "block";
         }
         else{
             element.style.display = "none";    
-        }
+        }       
+    })           
+})
 
-        
-        // console.log(cardTxt);
-    });
+
+
+searchNote.addEventListener("keypress", function(event) {  
+  if (event.keyCode === 13) {  
+   event.preventDefault();
+   document.getElementById("searchNoteButton").click();
+  }
 });
+
 
 let searchNoteButton=window.document.getElementById('searchNoteButton');
 searchNoteButton.addEventListener('click',function(){
-    let inputVal = searchNote.value.toLowerCase();
-    // console.log('Input event fired!', inputVal);
+    let inputVal = searchNote.value.toLowerCase();    
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function(element){        
         let cardTxt = element.getElementsByTagName("p")[0].innerText;
         let titleText=element.getElementsByTagName("h5")[0].innerText;
-        // console.log(titleText);
-        // console.log(element.getElementsByTagName('p'))
         if(cardTxt.toLowerCase().includes(inputVal) || titleText.toLowerCase().includes(inputVal)){
             element.style.display = "block";
         }
         else{
             element.style.display = "none";
-        }
-        // console.log(cardTxt);
-    });
+        }       
+    })
     searchNote.value='';
-});
+})
