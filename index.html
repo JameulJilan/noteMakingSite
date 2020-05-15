@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Note Generator</title>
+    <link rel="icon" type="image/png" href="jameul.png" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -15,48 +16,67 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand btn-outline-success" href="index.html"
-        >Note Generator</a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="container-fluid ">
+        <!-- <a class="navbar-brand" href="#">
+          <img src="jameul.png" alt="Bootstrappin" width="35" />
+        </a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link btn-outline-success" href="index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            id="searchNote"
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
+        <a class="navbar-brand btn-outline-success rounded" href="index.html"
+          >Note Generator</a
+        > -->
+        <a href="index.html" class="navbar-brand">
+          <!-- Logo Image -->
+          <img
+            src="jameul.png"
+            width="45"
+            alt=""
+            class="d-inline-block align-middle mr-2"
           />
-          <button
-            class="btn btn-outline-success my-2 my-sm-0"
-            type="button"
-            id="searchNoteButton"
+          <!-- Logo Text -->
+          <span class="navbar-brand btn-outline-success rounded"
+            >Note Generator</span
           >
-            Search
-          </button>
-        </form>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link btn-outline-success rounded" href="index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              id="searchNote"
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="button"
+              id="searchNoteButton"
+            >
+              Search
+            </button>
+          </form>
+        </div>
       </div>
     </nav>
-    <div role="main" class="container">
+    <div role="main" class="container my-3">
       <h1>Welcome To My Note Making Site</h1>
       <div class="card">
         <div class="card-body">
